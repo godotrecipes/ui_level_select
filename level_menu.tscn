@@ -37,8 +37,6 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
