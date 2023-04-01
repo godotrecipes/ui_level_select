@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0jnyeahsbghw"]
+
+[ext_resource type="PackedScene" uid="uid://cjkkqgkon0xc3" path="res://level_menu.tscn" id="1_yf0y5"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.396078, 0.592157, 0.729412, 1)
+
+[node name="LevelMenu" parent="." instance=ExtResource("1_yf0y5")]
+layout_mode = 1

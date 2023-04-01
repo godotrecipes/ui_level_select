@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjkkqgkon0xc3"]
+
+[ext_resource type="Script" path="res://level_menu.gd" id="1_lpegv"]
+[ext_resource type="FontFile" uid="uid://cwgdhmo3tbmnj" path="res://assets/Rubik-Bold.ttf" id="1_n6mqy"]
+[ext_resource type="Texture2D" uid="uid://5yuluwl3siy7" path="res://assets/arrowLeft.png" id="2_3pwt8"]
+[ext_resource type="Texture2D" uid="uid://extgbgqind56" path="res://assets/arrowRight.png" id="3_ffm6s"]
+[ext_resource type="PackedScene" uid="uid://eyd7iwwjmga" path="res://level_grid.tscn" id="3_tu2qe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ro15"]
+font = ExtResource("1_n6mqy")
+font_size = 100
+font_color = Color(0.933333, 0.513726, 0.0666667, 1)
+outline_size = 32
+outline_color = Color(0.341176, 0.427451, 0.513726, 1)
+
+[node name="LevelMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_lpegv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Level Select"
+label_settings = SubResource("LabelSettings_5ro15")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_3pwt8")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="ClipControl" type="Control" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(710, 350)
+layout_mode = 2
+
+[node name="GridBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ClipControl"]
+layout_mode = 2
+offset_right = 2138.0
+offset_bottom = 350.0
+theme_override_constants/separation = 0
+
+[node name="LevelGrid" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox" instance=ExtResource("3_tu2qe")]
+layout_mode = 2
+
+[node name="LevelGrid2" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox" instance=ExtResource("3_tu2qe")]
+layout_mode = 2
+
+[node name="LevelGrid3" parent="VBoxContainer/HBoxContainer/ClipControl/GridBox" instance=ExtResource("3_tu2qe")]
+layout_mode = 2
+
+[node name="NextButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_ffm6s")
+ignore_texture_size = true
+stretch_mode = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]

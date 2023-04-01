@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6oou3ftw24s"]
+
+[ext_resource type="Script" path="res://level_box.gd" id="1_bh3ql"]
+[ext_resource type="FontFile" uid="uid://cwgdhmo3tbmnj" path="res://assets/Rubik-Bold.ttf" id="2_lnepu"]
+[ext_resource type="Shader" path="res://2d_outline.gdshader" id="3_ieiix"]
+[ext_resource type="Texture2D" uid="uid://d0eqbbvydm3ia" path="res://assets/lockIcon2.png" id="4_l2v80"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tewb2"]
+bg_color = Color(0.682353, 0.878431, 0.85098, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.341176, 0.427451, 0.513726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nk7u7"]
+font = ExtResource("2_lnepu")
+font_size = 64
+font_color = Color(0.933333, 0.513726, 0.0666667, 1)
+outline_size = 16
+outline_color = Color(0.341176, 0.427451, 0.513726, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0m5e"]
+shader = ExtResource("3_ieiix")
+shader_parameter/enable = true
+shader_parameter/line_color = Color(0.341176, 0.427451, 0.513726, 1)
+shader_parameter/fill_color = Color(0.933333, 0.513726, 0.0666667, 1)
+shader_parameter/line_thickness = 15.0
+
+[node name="LevelBox" type="PanelContainer"]
+custom_minimum_size = Vector2(110, 110)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tewb2")
+script = ExtResource("1_bh3ql")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_nk7u7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Lock" type="TextureRect" parent="MarginContainer"]
+material = SubResource("ShaderMaterial_p0m5e")
+layout_mode = 2
+texture = ExtResource("4_l2v80")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
