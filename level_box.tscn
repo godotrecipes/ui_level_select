@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6oou3ftw24s"]
 
-[ext_resource type="Script" path="res://level_box.gd" id="1_bh3ql"]
+[ext_resource type="Script" uid="uid://dlq4nhphw7niy" path="res://level_box.gd" id="1_bh3ql"]
 [ext_resource type="FontFile" uid="uid://cwgdhmo3tbmnj" path="res://assets/Rubik-Bold.ttf" id="2_lnepu"]
-[ext_resource type="Shader" path="res://2d_outline.gdshader" id="3_ieiix"]
+[ext_resource type="Shader" uid="uid://cy86i4rf5qvdb" path="res://2d_outline.gdshader" id="3_ieiix"]
 [ext_resource type="Texture2D" uid="uid://d0eqbbvydm3ia" path="res://assets/lockIcon2.png" id="4_l2v80"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tewb2"]

@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c6oou3ftw24s" path="res://level_box.tscn" id="1_4o7v8"]
 
 [node name="LevelGrid" type="GridContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 710.0
+offset_bottom = 350.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 6
